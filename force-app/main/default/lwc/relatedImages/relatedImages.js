@@ -57,18 +57,29 @@ export default class RelatedImages extends NavigationMixin(LightningElement) {
   }
 
   toFile(event) {
-    this[NavigationMixin.Navigate]({
-      type: 'standard__namedPage',
-      attributes: {
-        pageName: 'filePreview'
-      },
-      state: {
-        recordIds: this.modifiedImages
-          .map(img => img.ContentDocumentId)
-          .join(','),
-        selectedRecordId: event.target.dataset.ContentDocumentId
-      }
-    });
+    if (this.isCommunity()) {
+      this[NavigationMixin.Navigate]({
+        type: 'standard__recordPage',
+        attributes: {
+          objectApiName: 'ContentDocument',
+          actionName: 'view',
+          recordId: event.target.dataset.id
+        }
+      });
+    } else {
+      this[NavigationMixin.Navigate]({
+        type: 'standard__namedPage',
+        attributes: {
+          pageName: 'filePreview'
+        },
+        state: {
+          recordIds: this.modifiedImages
+            .map(img => img.ContentDocumentId)
+            .join(','),
+          selectedRecordId: event.target.dataset.id
+        }
+      });
+    }
   }
 
   isCommunity() {
