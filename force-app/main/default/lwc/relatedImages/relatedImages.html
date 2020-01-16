@@ -1,0 +1,85 @@
+<template>
+  <template if:true={wrapped}>
+    <lightning-card title={title}>
+      <p class="slds-p-horizontal_small">
+        <template if:true={isEmpty}>
+          <div class="slds-illustration">
+            <img src="/projRes/ui-home-private/emptyStates/noTasks.svg" />
+            <div class="slds-text-color_weak">
+              <h3 class="slds-text-heading_medium">
+                There are no image files on this record
+              </h3>
+            </div>
+          </div>
+        </template>
+        <template if:true={isCarousel}>
+          <lightning-carousel>
+            <template for:each={modifiedImages} for:item="image">
+              <lightning-carousel-image
+                key={image.Id}
+                alternative-text={image.Title}
+                src={image.imageUrl}
+              >
+              </lightning-carousel-image>
+            </template>
+          </lightning-carousel>
+        </template>
+
+        <template if:true={isGrid}>
+          <div class="grid" style={RowStyle}>
+            <template for:each={modifiedImages} for:item="image">
+              <div key={image.Id}>
+                <img
+                  alt={image.Title}
+                  src={image.imageUrl}
+                  onclick={toFile}
+                  data-id={image.ContentDocumentId}
+                />
+              </div>
+            </template>
+          </div>
+        </template>
+      </p>
+    </lightning-card>
+  </template>
+
+  <template if:false={wrapped}>
+    <template if:true={isEmpty}>
+      <div class="slds-illustration">
+        <img src="/projRes/ui-home-private/emptyStates/noTasks.svg" />
+        <div class="slds-text-color_weak">
+          <h3 class="slds-text-heading_medium">
+            There are no image files on this record
+          </h3>
+        </div>
+      </div>
+    </template>
+    <template if:true={isCarousel}>
+      <lightning-carousel>
+        <template for:each={modifiedImages} for:item="image">
+          <lightning-carousel-image
+            key={image.Id}
+            alternative-text={image.Title}
+            src={image.imageUrl}
+          >
+          </lightning-carousel-image>
+        </template>
+      </lightning-carousel>
+    </template>
+
+    <template if:true={isGrid}>
+      <div class="grid" style={RowStyle}>
+        <template for:each={modifiedImages} for:item="image">
+          <div key={image.Id}>
+            <img
+              alt={image.Title}
+              src={image.imageUrl}
+              onclick={toFile}
+              data-id={image.ContentDocumentId}
+            />
+          </div>
+        </template>
+      </div>
+    </template>
+  </template>
+</template>

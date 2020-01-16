@@ -1,0 +1,6 @@
+.grid {
+  display: grid;
+  grid-column-gap: 0.3%;
+  grid-row-gap: 0.3%;
+  align-items: center;
+}
