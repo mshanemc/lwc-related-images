@@ -6,7 +6,7 @@ import getRelatedImages from '@salesforce/apex/relatedImages.getRelatedImages';
 export default class RelatedImages extends NavigationMixin(LightningElement) {
   @api recordId;
   @api variant = 'grid';
-  @api itemsPerRow = '6';
+  @api itemsPerRow;
   @api wrapped = false;
   @api title;
   @track modifiedImages = [];
@@ -48,12 +48,8 @@ export default class RelatedImages extends NavigationMixin(LightningElement) {
   }
 
   get RowStyle() {
-    let repeats = this.itemsPerRow;
-    if (this.itemsPerRow < 1 || this.itemsPerRow > this.modifiedImages.length) {
-      // divide the space equally;
-      repeats = this.modifiedImages.length;
-    }
-    return `grid-template-columns: repeat(${repeats}, 1fr);`;
+    return `grid-template-columns: repeat(${this.itemsPerRow ||
+      this.modifiedImages.length}, 1fr);`;
   }
 
   toFile(event) {

@@ -11,13 +11,13 @@
         <targetConfig targets="lightningCommunity__Default">
             <property required="true" name="recordId" type="String" description="set this to {!recordId} to inherit from the page" />
             <property required="true" name="variant" label="Format" type="String" description="how to display the images (grid or carousel)" default="grid" datasource="carousel,grid" />
-            <property name="itemsPerRow" type="Integer" min="1" label="Maximum Items per Row" description="only valid for grid.  Maxiumum number of images per row" default="6" />
+            <property name="itemsPerRow" type="Integer" min="1" label="Maximum Items per Row" description="only valid for grid.  Maxiumum number of images per row" />
             <property name="wrapped" type="boolean" label="Wrap in a lightning-card" description="helps with background/padding issues" />
             <property name="title" label="Title" type="String" description="title for the card or carousel" />
         </targetConfig>
         <targetConfig targets="lightning__RecordPage">
             <property required="true" name="variant" label="Format" type="String" description="how to display the images (grid or carousel)" default="grid" datasource="carousel,grid" />
-            <property name="itemsPerRow" type="Integer" min="1" label="Maximum Items per Row" description="only valid for grid.  Maxiumum number of images per row" default="6" />
+            <property name="itemsPerRow" type="Integer" min="1" label="Maximum Items per Row" description="only valid for grid.  Maxiumum number of images per row" />
             <property name="wrapped" type="boolean" label="Wrap in a lightning-card" description="helps with background/padding issues" />
             <property name="title" label="Title" type="String" description="title for the card or carousel" />
         </targetConfig>
