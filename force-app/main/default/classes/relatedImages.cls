@@ -29,4 +29,5 @@ public with sharing class relatedImages {
             AND Id NOT in: getChatterFiles(recordId)
         ];
     }
+
 }

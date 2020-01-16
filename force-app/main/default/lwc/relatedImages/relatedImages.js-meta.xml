@@ -4,6 +4,7 @@
     <isExposed>true</isExposed>
     <targets>
         <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
         <target>lightningCommunity__Default</target>
     </targets>
     <targetConfigs>
@@ -13,14 +14,12 @@
             <property name="itemsPerRow" type="Integer" min="1" label="Maximum Items per Row" description="only valid for grid.  Maxiumum number of images per row" default="6" />
             <property name="wrapped" type="boolean" label="Wrap in a lightning-card" description="helps with background/padding issues" />
             <property name="title" label="Title" type="String" description="title for the card or carousel" />
-
         </targetConfig>
         <targetConfig targets="lightning__RecordPage">
             <property required="true" name="variant" label="Format" type="String" description="how to display the images (grid or carousel)" default="grid" datasource="carousel,grid" />
             <property name="itemsPerRow" type="Integer" min="1" label="Maximum Items per Row" description="only valid for grid.  Maxiumum number of images per row" default="6" />
             <property name="wrapped" type="boolean" label="Wrap in a lightning-card" description="helps with background/padding issues" />
             <property name="title" label="Title" type="String" description="title for the card or carousel" />
-
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

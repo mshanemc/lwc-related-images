@@ -18,12 +18,19 @@ export default class RelatedImages extends NavigationMixin(LightningElement) {
       console.error(error);
     }
     if (data) {
-      this.modifiedImages = [...data].map(image => ({
-        ...image,
-        imageUrl: `/sfc/servlet.shepherd/version/download/${
+      this.gotData = true;
+      this.modifiedImages = [...data].map(image => {
+        let imageUrl = `/sfc/servlet.shepherd/version/download/${
           image.Id.split('-')[0]
-        }`
-      }));
+        }`;
+        if (this.isCommunity()) {
+          imageUrl = `/${this.getCommunityPath()}${imageUrl}`;
+        }
+        return {
+          ...image,
+          imageUrl
+        };
+      });
       console.log(this.modifiedImages);
     }
   }
@@ -37,7 +44,7 @@ export default class RelatedImages extends NavigationMixin(LightningElement) {
   }
 
   get isEmpty() {
-    return this.modifiedImages.length === 0;
+    return this.modifiedImages.length === 0 && this.gotData;
   }
 
   get RowStyle() {
@@ -62,5 +69,13 @@ export default class RelatedImages extends NavigationMixin(LightningElement) {
         selectedRecordId: event.target.dataset.ContentDocumentId
       }
     });
+  }
+
+  isCommunity() {
+    return window.location.pathname.includes('/s/');
+  }
+
+  getCommunityPath() {
+    return window.location.pathname.split('/s/')[0].replace('/', '');
   }
 }
