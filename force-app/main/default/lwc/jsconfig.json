@@ -5,9 +5,6 @@
         "paths": {
             "c/relatedImages": [
                 "relatedImages/relatedImages.js"
-            ],
-            "c/contentDisplayer": [
-                "contentDisplayer/contentDisplayer.js"
             ]
         }
     },
