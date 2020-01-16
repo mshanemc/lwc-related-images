@@ -1,21 +1,22 @@
 {
-  "packageDirectories": [
-    {
-      "path": "force-app",
-      "package": "relatedImages",
-      "versionName": "ver 0.1",
-      "versionNumber": "0.2.0.NEXT",
-      "default": false
-    },
-    {
-      "path": "implementation",
-      "default": true
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "package": "relatedImages",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.2.0.NEXT",
+            "default": false
+        },
+        {
+            "path": "implementation",
+            "default": true
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "47.0",
+    "packageAliases": {
+        "relatedImages": "0Ho3u0000008OKkCAM",
+        "relatedImages@0.2.0-1": "04t3u000002qbg1AAA"
     }
-  ],
-  "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "47.0",
-  "packageAliases": {
-    "relatedImages": "0Ho3u0000008OKkCAM"
-  }
 }
