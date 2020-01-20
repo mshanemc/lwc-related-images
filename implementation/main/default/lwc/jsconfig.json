@@ -2,14 +2,14 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
+            "c/classSet": [
+                "../../../../force-app/main/default/lwc/classSet/classSet.js"
+            ],
             "c/filecard": [
                 "../../../../force-app/main/default/lwc/filecard/filecard.js"
             ],
             "c/relatedImages": [
                 "../../../../force-app/main/default/lwc/relatedImages/relatedImages.js"
-            ],
-            "c/classSet": [
-                "../../../../force-app/main/default/lwc/classSet/classSet.js"
             ]
         }
     }
