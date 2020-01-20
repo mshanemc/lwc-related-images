@@ -3,8 +3,14 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
+            "c/filecard": [
+                "filecard/filecard.js"
+            ],
             "c/relatedImages": [
                 "relatedImages/relatedImages.js"
+            ],
+            "c/classSet": [
+                "classSet/classSet.js"
             ]
         }
     },

@@ -1,0 +1,38 @@
+<template>
+  <div class={outerClass}>
+    <figure>
+      <a href="" class={hrefClass} onclick={toFile}>
+        <span class="slds-assistive-text">Preview:</span>
+        <template if:true={wiredRecord.data}>
+          <img src={imgUrl} alt={title} />
+        </template>
+
+        <template if:false={wiredRecord.data}>
+          <lightning-spinner
+            alternative-text="Loading"
+            size="small"
+          ></lightning-spinner>
+        </template>
+      </a>
+      <template if:true={title}>
+        <figcaption class="slds-file__title slds-file__title_card">
+          <div class="slds-media slds-media_small slds-media_center">
+            <!-- <div class="slds-media__figure slds-line-height_reset">
+            <span class="slds-icon_container" title="pdf">
+              <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                <use xlink:href="/assets/icons/doctype-sprite/svg/symbols.svg#pdf"></use>
+              </svg>
+              <span class="slds-assistive-text">pdf</span>
+            </span>
+          </div> -->
+            <div class="slds-media__body">
+              <span class="slds-file__text slds-truncate" title={title}
+                >{title}</span
+              >
+            </div>
+          </div>
+        </figcaption>
+      </template>
+    </figure>
+  </div>
+</template>

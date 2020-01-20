@@ -12,29 +12,21 @@
             </div>
           </div>
         </template>
-        <template if:true={isCarousel}>
-          <lightning-carousel>
-            <template for:each={modifiedImages} for:item="image">
-              <lightning-carousel-image
-                key={image.Id}
-                alternative-text={image.Title}
-                src={image.imageUrl}
-              >
-              </lightning-carousel-image>
-            </template>
-          </lightning-carousel>
-        </template>
 
-        <template if:true={isGrid}>
+        <template if:false={isEmpty}>
           <div class="grid" style={RowStyle}>
             <template for:each={modifiedImages} for:item="image">
               <div key={image.Id}>
-                <img
+                <!-- <img
                   alt={image.Title}
                   src={image.imageUrl}
                   onclick={toFile}
                   data-id={image.ContentDocumentId}
-                />
+                /> -->
+                <c-filecard
+                  cv-id={image.Id}
+                  show-title={showTitles}
+                ></c-filecard>
               </div>
             </template>
           </div>
@@ -54,29 +46,18 @@
         </div>
       </div>
     </template>
-    <template if:true={isCarousel}>
-      <lightning-carousel>
-        <template for:each={modifiedImages} for:item="image">
-          <lightning-carousel-image
-            key={image.Id}
-            alternative-text={image.Title}
-            src={image.imageUrl}
-          >
-          </lightning-carousel-image>
-        </template>
-      </lightning-carousel>
-    </template>
 
-    <template if:true={isGrid}>
+    <template if:false={isEmpty}>
       <div class="grid" style={RowStyle}>
         <template for:each={modifiedImages} for:item="image">
           <div key={image.Id}>
-            <img
+            <!-- <img
               alt={image.Title}
               src={image.imageUrl}
               onclick={toFile}
               data-id={image.ContentDocumentId}
-            />
+            /> -->
+            <c-filecard cv-id={image.Id} show-title={showTitles}></c-filecard>
           </div>
         </template>
       </div>

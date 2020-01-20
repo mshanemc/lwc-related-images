@@ -20,7 +20,7 @@ public with sharing class relatedImages {
 
     @auraEnabled(cacheable=true)
     public static list<ContentVersion> getRelatedImages(id recordId) {
-        return [select id, VersionData, ContentDocumentId, Title, Description 
+        return [select id 
         from ContentVersion 
         where 
             IsLatest = true 
