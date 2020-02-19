@@ -15,6 +15,7 @@
             <property name="wrapped" type="boolean" label="Wrap in a lightning-card" description="helps with background/padding issues" />
             <property name="title" label="Title" type="String" description="title for the card wrapper" />
             <property name="variant" label="Deprecated" type="String" description="do not use." />
+            <property name="aspectRatio" label="Aspect Ratio" type="String" datasource="1x1,4x3,16x9" default="16x9" />
         </targetConfig>
         <targetConfig targets="lightning__RecordPage">
             <property name="itemsPerRow" type="Integer" min="1" label="Maximum Items per Row" description="only valid for grid.  Maxiumum number of images per row" />
@@ -22,6 +23,7 @@
             <property name="wrapped" type="boolean" label="Wrap in a lightning-card" description="helps with background/padding issues" />
             <property name="title" label="Title" type="String" description="title for the card wrapper" />
             <property name="variant" label="Deprecated" type="String" description="do not use." />
+            <property name="aspectRatio" label="Aspect Ratio" type="String" datasource="1x1,4x3,16x9" default="16x9" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

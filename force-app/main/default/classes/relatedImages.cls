@@ -12,8 +12,20 @@ public with sharing class relatedImages {
 
     public static list<id> getChatterFiles(id recordId) {
         list<id> output = new list<id>();
-        for (FeedItem fi: [select id, RelatedRecordId, ParentId from FeedItem where parentId =: recordId]) {
-            output.add(fi.RelatedRecordId);
+        try { 
+            Schema.SObjectType token = recordId.getSObjectType();
+            Schema.DescribeSObjectResult dr = token.getDescribe();
+            if (dr.isFeedEnabled()) {
+                string FeedObj = dr.getName().contains('__c') ? dr.getName().replace('__c', '__Feed'):dr.getName() + 'Feed';
+                string query = 'select RelatedRecordId from ' + ' where parentId =: \'' + FeedObj +'\'';
+                List<SObject> feedItems = Database.query(query);
+                for(SObject fi:feedItems) {
+                    output.add((string) fi.get('RelatedRecordId'));
+                }
+            }
+        } catch(exception e) {
+            // all kinds of things can happen here
+            system.debug(e);
         }
         return output;
     }

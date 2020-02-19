@@ -1,7 +1,7 @@
 <template>
   <template if:true={wrapped}>
     <lightning-card title={title}>
-      <p class="slds-p-horizontal_small">
+      <p class="slds-var-p-horizontal_small">
         <template if:true={isEmpty}>
           <div class="slds-illustration">
             <img src="/projRes/ui-home-private/emptyStates/noTasks.svg" />
@@ -17,12 +17,6 @@
           <div class="grid" style={RowStyle}>
             <template for:each={modifiedImages} for:item="image">
               <div key={image.Id}>
-                <!-- <img
-                  alt={image.Title}
-                  src={image.imageUrl}
-                  onclick={toFile}
-                  data-id={image.ContentDocumentId}
-                /> -->
                 <c-filecard
                   cv-id={image.Id}
                   show-title={showTitles}
@@ -51,13 +45,11 @@
       <div class="grid" style={RowStyle}>
         <template for:each={modifiedImages} for:item="image">
           <div key={image.Id}>
-            <!-- <img
-              alt={image.Title}
-              src={image.imageUrl}
-              onclick={toFile}
-              data-id={image.ContentDocumentId}
-            /> -->
-            <c-filecard cv-id={image.Id} show-title={showTitles}></c-filecard>
+            <c-filecard
+              cv-id={image.Id}
+              show-title={showTitles}
+              aspect-ratio={aspectRatio}
+            ></c-filecard>
           </div>
         </template>
       </div>

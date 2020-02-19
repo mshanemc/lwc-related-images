@@ -11,8 +11,9 @@ export default class RelatedImages extends NavigationMixin(LightningElement) {
   @api title;
   @track modifiedImages = [];
   @api showTitles;
+  @api aspectRatio;
 
-  // get the releated urls for displaying the images
+  // get the related urls for displaying the images
   @wire(getRelatedImages, { recordId: '$recordId' })
   images({ data, error }) {
     if (error) {

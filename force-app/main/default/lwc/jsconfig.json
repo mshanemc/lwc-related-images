@@ -11,6 +11,9 @@
             ],
             "c/relatedImages": [
                 "relatedImages/relatedImages.js"
+            ],
+            "c/localPreviewer": [
+                "../../../../implementation/main/default/lwc/localPreviewer/localPreviewer.js"
             ]
         }
     },

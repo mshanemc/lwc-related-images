@@ -10,7 +10,20 @@
             ],
             "c/relatedImages": [
                 "../../../../force-app/main/default/lwc/relatedImages/relatedImages.js"
+            ],
+            "c/localPreviewer": [
+                "localPreviewer/localPreviewer.js"
             ]
-        }
+        },
+        "experimentalDecorators": true
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
     }
 }

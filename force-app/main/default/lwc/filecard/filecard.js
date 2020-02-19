@@ -9,7 +9,7 @@ import EXTENSION from '@salesforce/schema/ContentVersion.FileExtension';
 import CD from '@salesforce/schema/ContentVersion.ContentDocumentId';
 
 export default class Filecard extends NavigationMixin(LightningElement) {
-  @api cvId = '0681F000000WNhOQAW';
+  @api cvId;
   @api showTitle;
   @api aspectRatio;
 
@@ -78,7 +78,6 @@ export default class Filecard extends NavigationMixin(LightningElement) {
   }
 
   isCommunity() {
-    console.log('not a community');
     return window.location.pathname.includes('/s/');
   }
 }
