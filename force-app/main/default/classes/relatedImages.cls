@@ -25,7 +25,7 @@ public with sharing class relatedImages {
             }
         } catch(exception e) {
             // all kinds of things can happen here
-            system.debug(e);
+            System.debug(e);
         }
         return output;
     }
@@ -39,6 +39,7 @@ public with sharing class relatedImages {
             AND fileExtension in: extensions 
             AND ContentDocumentId in: getRelatedContentDocumentIDs(recordId)
             AND Id NOT in: getChatterFiles(recordId)
+        order by Sequence__c ASC NULLS LAST
         ];
     }
 
